@@ -1,0 +1,27 @@
+name: angular-app
+
+on:
+    push:
+        branches: [main]
+
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        name: build
+        steps:
+            - name: check out 
+              uses: actions/checkout@v4
+
+            - name: setup nodejs
+              uses: actions/setup-node@v1
+              with:
+                node-version: 18
+                
+            - name: test
+              run: |
+                npm ci
+                ng build
+                ng test
+
+    
