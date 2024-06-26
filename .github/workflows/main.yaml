@@ -19,4 +19,5 @@ jobs:
 
       - name: Copy files via SCP
         run: |
-          scp -r -o StrictHostKeyChecking=no ./*  ubuntu@ec2-3-109-60-247.ap-south-1.compute.amazonaws.com:/var/www/
+          scp -r -o StrictHostKeyChecking=no ./* ubuntu@ec2-3-109-60-247.ap-south-1.compute.amazonaws.com:/tmp/
+          ssh ubuntu@ec2-3-109-60-247.ap-south-1.compute.amazonaws.com 'sudo mv /tmp/* /var/www/'
