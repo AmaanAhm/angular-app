@@ -19,7 +19,7 @@ jobs:
 
       - name: Copy files via SCP
         run: |
-          rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./* ubuntu@ec2-3-109-60-247.ap-south-1.compute.amazonaws.com:/tmp/
+          rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./* ubuntu@ec2-65-0-100-40.ap-south-1.compute.amazonaws.com:/tmp/
           ssh ubuntu@ec2-3-109-60-247.ap-south-1.compute.amazonaws.com 'sudo rsync -avz /tmp/ /var/www/'
       - name: Run npm build
         run: |
