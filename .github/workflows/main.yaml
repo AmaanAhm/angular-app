@@ -20,5 +20,5 @@ jobs:
       - name: test
         run: |
           npm ci
-          ng build
-          ng test
+          npm run build
+          npm test
