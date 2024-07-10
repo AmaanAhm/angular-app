@@ -20,7 +20,7 @@ jobs:
       - name: Copy files via SCP
         run: |
           rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./* ubuntu@ec2-65-2-98-244.ap-south-1.compute.amazonaws.com:/tmp/
-          ssh ubuntu@ec2-65-2-98-244.ap-south-1.compute.amazonaws.com 'sudo rsync -avz /tmp/ /var/www/html/angular-app'
+          ssh ubuntu@ec2-65-2-98-244.ap-south-1.compute.amazonaws.com 'sudo rsync -avz /tmp/ /var/www/html/'
       - name: Run npm build
         run: |
-          ssh ubuntu@ec2-65-2-98-244.ap-south-1.compute.amazonaws.com 'cd /var/www/html/angular-app && npm install && ng build'
+          ssh ubuntu@ec2-65-2-98-244.ap-south-1.compute.amazonaws.com 'cd /var/www/html && npm install && ng build'
